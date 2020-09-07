@@ -1,0 +1,57 @@
+import("//build/config/jumbo.gni")
+
+config("yoga_config") {
+  include_dirs = [ "." ]
+
+  if (is_clang) {
+    cflags_cc = [
+      # using namespace facebook
+      "-Wno-header-hygiene",
+      # extra ';' after member function definition
+      "-Wno-extra-semi",
+      # extra ';' outside of a function is incompatible with C++98
+      "-Wno-c++98-compat-extra-semi",
+    ]
+  } else if (is_win) {
+    cflags = [
+      "/wd4005",  # 'isnan': macro redefinition
+      "/wd4028",  # formal parameter 13 different from declaration
+      "/wd4267",  # conversion from 'size_t' to 'const unsigned long'
+      "/wd4232",  # address of dllimport 'free' is not static, identity not guaranteed
+    ]
+  }
+}
+
+jumbo_source_set("yoga") {
+  sources = [
+    "event/event.cpp",
+    "event/event.h",
+    "BitUtils.h",
+    "CompactValue.h",
+    "Utils.cpp",
+    "Utils.h",
+    "YGConfig.cpp",
+    "YGConfig.h",
+    "YGEnums.cpp",
+    "YGEnums.h",
+    "YGFloatOptional.h",
+    "YGLayout.cpp",
+    "YGLayout.h",
+    "YGMacros.h",
+    "YGNode.cpp",
+    "YGNode.h",
+    "YGNodePrint.cpp",
+    "YGNodePrint.h",
+    "YGStyle.cpp",
+    "YGStyle.h",
+    "YGValue.cpp",
+    "YGValue.h",
+    "Yoga-internal.h",
+    "Yoga.cpp",
+    "Yoga.h",
+    "log.cpp",
+    "log.h",
+  ]
+
+  public_configs = [ ":yoga_config" ]
+}
