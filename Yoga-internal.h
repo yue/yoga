@@ -136,6 +136,7 @@ public:
     return true;
   }
 
+  Values(const Values&) = default;
   Values& operator=(const Values& other) = default;
 };
 
