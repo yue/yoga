@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include <yoga/Yoga.h>
+#include "Yoga.h"
 
 #include "BitUtils.h"
 #include "Yoga-internal.h"

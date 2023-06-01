@@ -12,7 +12,7 @@
 #include <cmath>
 #include <vector>
 
-#include <yoga/Yoga.h>
+#include "Yoga.h"
 
 #include "CompactValue.h"
 

@@ -11,7 +11,7 @@
 #include <cstdio>
 #include <cstdint>
 
-#include <yoga/YGEnums.h>
+#include "YGEnums.h"
 
 namespace facebook {
 namespace yoga {

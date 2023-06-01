@@ -5,13 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#ifdef DEBUG
-
 #pragma once
 
 #include <string>
 
-#include <yoga/Yoga.h>
+#include "Yoga.h"
 
 namespace facebook {
 namespace yoga {
@@ -24,5 +22,3 @@ void YGNodeToString(
 
 } // namespace yoga
 } // namespace facebook
-
-#endif

@@ -18,9 +18,9 @@
 #include <stdbool.h>
 #endif
 
-#include <yoga/YGEnums.h>
-#include <yoga/YGMacros.h>
-#include <yoga/YGValue.h>
+#include "YGEnums.h"
+#include "YGMacros.h"
+#include "YGValue.h"
 
 YG_EXTERN_C_BEGIN
 

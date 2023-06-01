@@ -1,0 +1,61 @@
+import("//build/config/jumbo.gni")
+
+config("yoga_config") {
+  include_dirs = [ "yoga" ]
+
+  if (is_clang) {
+    cflags_cc = [
+      # using namespace facebook
+      "-Wno-header-hygiene",
+      # extra ';' after member function definition
+      "-Wno-extra-semi",
+      # extra ';' outside of a function is incompatible with C++98
+      "-Wno-c++98-compat-extra-semi",
+      # definition of implicit copy constructor is deprecated
+      "-Wno-deprecated-copy",
+      # use of bitwise '|' with boolean operands
+      "-Wno-bitwise-instead-of-logical",
+    ]
+  } else if (is_win) {
+    cflags = [
+      "/wd4005",  # 'isnan': macro redefinition
+      "/wd4028",  # formal parameter 13 different from declaration
+      "/wd4267",  # conversion from 'size_t' to 'const unsigned long'
+      "/wd4232",  # address of dllimport 'free' is not static, identity not guaranteed
+    ]
+  }
+}
+
+jumbo_source_set("yoga") {
+  sources = [
+    "yoga/event/event.cpp",
+    "yoga/event/event.h",
+    "yoga/BitUtils.h",
+    "yoga/CompactValue.h",
+    "yoga/Utils.cpp",
+    "yoga/Utils.h",
+    "yoga/YGConfig.cpp",
+    "yoga/YGConfig.h",
+    "yoga/YGEnums.cpp",
+    "yoga/YGEnums.h",
+    "yoga/YGFloatOptional.h",
+    "yoga/YGLayout.cpp",
+    "yoga/YGLayout.h",
+    "yoga/YGMacros.h",
+    "yoga/YGNode.cpp",
+    "yoga/YGNode.h",
+    "yoga/YGNodePrint.cpp",
+    "yoga/YGNodePrint.h",
+    "yoga/YGStyle.cpp",
+    "yoga/YGStyle.h",
+    "yoga/YGValue.cpp",
+    "yoga/YGValue.h",
+    "yoga/Yoga-internal.h",
+    "yoga/Yoga.cpp",
+    "yoga/Yoga.h",
+    "yoga/log.cpp",
+    "yoga/log.h",
+  ]
+
+  public_configs = [ ":yoga_config" ]
+}

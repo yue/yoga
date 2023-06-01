@@ -11,8 +11,8 @@
 #include <cstdint>
 #include <limits>
 
-#include <yoga/YGMacros.h>
-#include <yoga/YGValue.h>
+#include "YGMacros.h"
+#include "YGValue.h"
 
 #if defined(__has_include) && __has_include(<version>)
 // needed to be able to evaluate defined(__cpp_lib_bit_cast)

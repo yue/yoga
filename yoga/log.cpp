@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#include <yoga/Yoga.h>
+#include "Yoga.h"
 
 #include "log.h"
 #include "YGConfig.h"

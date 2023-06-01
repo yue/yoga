@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include <yoga/YGEnums.h>
+#include "YGEnums.h"
 
 struct YGNode;
 struct YGConfig;

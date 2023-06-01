@@ -12,7 +12,7 @@
 #include <cstdint>
 #include <type_traits>
 
-#include <yoga/Yoga.h>
+#include "Yoga.h"
 
 #include "CompactValue.h"
 #include "YGFloatOptional.h"

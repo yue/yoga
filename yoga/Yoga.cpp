@@ -11,7 +11,7 @@
 #include <atomic>
 #include <memory>
 
-#include <yoga/Yoga.h>
+#include "Yoga.h"
 
 #include "log.h"
 #include "Utils.h"
